@@ -210,7 +210,6 @@ class CarInterface(CarInterfaceBase):
     elif candidate in (CAR.CHEVROLET_BOLT_EUV, CAR.CHEVROLET_BOLT_CC):
       ret.steerActuatorDelay = 0.2
       CarInterfaceBase.configure_torque_tune(candidate, ret.lateralTuning)
-      ret.lateralTuning.torque.kp = 0.6
 
     # Enable pedal interceptor for ACC models when detected
     if candidate in CAMERA_ACC_CAR and ret.enableGasInterceptor:
@@ -284,7 +283,7 @@ class CarInterface(CarInterfaceBase):
         # Note: Low speed, stop and go not tested. Should be fairly smooth on highway
         ret.longitudinalTuning.kiBP = [0., 3., 6., 35.]
         ret.longitudinalTuning.kiV = [0.125, 0.175, 0.225, 0.33]
-        ret.longitudinalTuning.kf = 0.25
+        ret.longitudinalTuning.kfDEPRECATED = 0.25
         ret.stoppingDecelRate = 0.8
       else:  # Pedal used for SNG, ACC for longitudinal control otherwise
         ret.safetyConfigs[0].safetyParam |= Panda.FLAG_GM_HW_CAM_LONG
