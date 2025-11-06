@@ -3714,6 +3714,14 @@ Developer - 為資深愛好者提供高度自訂的設定</translation>
         <source>comma Pedal Support</source>
         <translation type="gpt-5-generated">comma Pedal 支援</translation>
     </message>
+    <message>
+        <source>Use Pedal for Longitudinal Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Use the pedal interceptor for longitudinal control&lt;/b&gt; instead of camera ACC/Redneck when available.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FrogPilotVisualsPanel</name>

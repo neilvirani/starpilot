@@ -3716,6 +3716,14 @@ Developer - Ultra-custom settings for seasoned duckthusiasts</translation>
         <source>comma Pedal Support</source>
         <translation type="gpt-5-generated">Quack! comma Pedal Support, waddle on!</translation>
     </message>
+    <message>
+        <source>Use Pedal for Longitudinal Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Use the pedal interceptor for longitudinal control&lt;/b&gt; instead of camera ACC/Redneck when available.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FrogPilotVisualsPanel</name>
