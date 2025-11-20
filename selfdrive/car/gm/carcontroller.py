@@ -35,7 +35,7 @@ PADDLE_GAP_TARGET_NS    = 5_000_000   # aim per‑side gap even if interval//2 �
 PADDLE_NONBLOCK_GAP_NS  = 1_000_000   # ≥1 ms since last paddle send
 PADDLE_SLOT_EARLY_NS    = 1_000_000   # allow firing up to 1 ms before slot
 OVERFLOW_THRESH         = 1.00        # fire one extra slot whenever credits ≥ 1.0
-PADDLE_TARGET_HZ        = 39.0        # desired paddle rate (Hz) when regen active; steer is ~33 Hz
+PADDLE_TARGET_HZ        = 40.0        # desired paddle rate (Hz) when regen active; steer is ~33 Hz
 # Constants for pitch compensation
 BRAKE_PITCH_FACTOR_BP = [5., 10.]  # [m/s] smoothly revert to planned accel at low speeds
 BRAKE_PITCH_FACTOR_V = [0., 1.]  # [unitless in [0,1]]; don't touch
