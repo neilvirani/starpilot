@@ -91,8 +91,9 @@ class Controls:
     self.pm = messaging.PubMaster(['controlsState', 'carControl', 'onroadEvents', 'frogpilotControlsState', 'frogpilotOnroadEvents'])
 
     self.sensor_packets = ["accelerometer", "gyroscope"]
-    self.camera_packets = ["roadCameraState", "driverCameraState", "wideRoadCameraState"]
-
+    # self.camera_packets = ["roadCameraState", "driverCameraState", "wideRoadCameraState"]
+    self.camera_packets = ["roadCameraState", "driverCameraState"]
+                           
     self.log_sock = messaging.sub_sock('androidLog')
 
     # TODO: de-couple controlsd with card/conflate on carState without introducing controls mismatches
@@ -113,6 +114,9 @@ class Controls:
 
     self.joystick_mode = self.params.get_bool("JoystickDebugMode")
 
+    self.sm.ignore_alive.append("wideRoadCameraState")
+    self.sm.ignore_valid.append("wideRoadCameraState")
+    
     # read params
     self.is_metric = self.params.get_bool("IsMetric")
     self.is_ldw_enabled = self.params.get_bool("IsLdwEnabled")
@@ -491,8 +495,8 @@ class Controls:
         available_streams = VisionIpcClient.available_streams("camerad", block=False)
         if VisionStreamType.VISION_STREAM_ROAD not in available_streams:
           self.sm.ignore_alive.append('roadCameraState')
-        if VisionStreamType.VISION_STREAM_WIDE_ROAD not in available_streams:
-          self.sm.ignore_alive.append('wideRoadCameraState')
+        # if VisionStreamType.VISION_STREAM_WIDE_ROAD not in available_streams:
+        #  self.sm.ignore_alive.append('wideRoadCameraState')
 
         self.initialized = True
         self.set_initial_state()
